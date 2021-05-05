@@ -10,8 +10,8 @@ jobs:
       runner: ${{ steps.check-runner.outputs.runner }}
     steps:
       - uses: actions/checkout@v2
-      
-      - uses: ./dist
+
+      - uses: ./
         id: check-runner
 
       - run: echo "runner is ${{ steps.check-runner.outputs.runner }}"

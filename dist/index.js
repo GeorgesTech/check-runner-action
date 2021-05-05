@@ -6052,7 +6052,7 @@ const UBUNTU_LATEST = 'ubuntu-latest';
   try {
     const labels = github.context.payload.pull_request.labels || []
     
-    if (labels.includes(SELF_HOSTED)) {
+    if (labels.some(label => label.name === SELF_HOSTED)) {
       core.setOutput('runner', SELF_HOSTED)
     } else {
       core.setOutput('runner', UBUNTU_LATEST)
