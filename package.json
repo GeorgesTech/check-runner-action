@@ -1,15 +1,17 @@
 {
-  "name": "check-self-hosted-runner-request-action",
+  "name": "check-runner-action",
   "version": "1.0.0",
   "description": "Check the presence of self-hosted label on PR",
   "main": "index.js",
   "scripts": {
-    "test": "true",
-    "spec": "act -v -j check-self-hosted-runner-request --eventpath event.json"
+    "postinstall": "cp action.template.yml dist/action.yml",
+    "build": "ncc build index.js -o dist --source-map",
+    "spec": "act -v -j do-the-job --eventpath event.json"
   },
   "dependencies": {
     "@actions/core": "^1.2.7",
-    "@actions/github": "^4.0.0"
+    "@actions/github": "^4.0.0",
+    "@vercel/ncc": "^0.28.5"
   },
   "devDependencies": {}
 }

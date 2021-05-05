@@ -1,3 +1,3 @@
-# Check self-hosted runner request
+# Check Runner Action
 
 > Check the presence of self-hosted label on PR

@@ -1,0 +1,24 @@
+name: check runner
+
+on:
+  pull_request:
+
+jobs:
+  check-runner:
+    runs-on: ubuntu-latest
+    outputs:
+      runner: ${{ steps.check-runner.outputs.runner }}
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: ./dist
+        id: check-runner
+
+      - run: echo "runner is ${{ steps.check-runner.outputs.runner }}"
+
+  do-the-job:
+    name: Do the job on the runner
+    needs: check-runner
+    runs-on: ${{ needs.check-runner.outputs.runner }}
+    steps:
+      - run: echo "running on ${{ needs.check-runner.outputs.runner }}"
