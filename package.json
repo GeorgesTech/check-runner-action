@@ -1,0 +1,15 @@
+{
+  "name": "check-self-hosted-runner-request-action",
+  "version": "1.0.0",
+  "description": "Check the presence of self-hosted label on PR",
+  "main": "index.js",
+  "scripts": {
+    "test": "true",
+    "spec": "act -v -j check-self-hosted-runner-request --eventpath event.json"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.7",
+    "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {}
+}

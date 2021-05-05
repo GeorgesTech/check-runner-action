@@ -1,0 +1,9 @@
+name: Check self-hosted runner request
+description: Check the presence of self-hosted label on PR
+
+runs:
+  using: node12
+  main: index.js
+branding:
+  icon: server
+  color: blue
