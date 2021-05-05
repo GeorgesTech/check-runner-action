@@ -1,8 +1,12 @@
 {
     "pull_request": {
         "labels": [
-            "self-hosted",
-            "foo"
+            {
+                "name": "self-hosted"
+            },
+            {
+                "name": "foo"
+            }
         ]
     }
 }
