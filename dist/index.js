@@ -6050,6 +6050,10 @@ const UBUNTU_LATEST = 'ubuntu-latest';
 
 (async () => {
   try {
+    console.log(github.context.payload)
+    console.log(github.context.payload.pull_request)
+    console.log(github.context.payload.pull_request.labels)
+
     const labels = github.context.payload.pull_request.labels || []
     
     if (labels.some(label => label.name === SELF_HOSTED)) {
