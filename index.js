@@ -14,6 +14,6 @@ const UBUNTU_LATEST = 'ubuntu-latest';
       core.setOutput('runner', UBUNTU_LATEST)
     }
   } catch (error) {
-    core.setFailed(error.message)
+    core.setOutput('runner', UBUNTU_LATEST)
   }
 })()
