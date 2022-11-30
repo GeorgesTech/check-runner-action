@@ -5,7 +5,7 @@ on:
 
 jobs:
   check-runner:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     outputs:
       runner: ${{ steps.check-runner.outputs.runner }}
     steps:

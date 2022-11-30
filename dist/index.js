@@ -6046,21 +6046,21 @@ const core = __nccwpck_require__(186);
 const github = __nccwpck_require__(438);
 
 const SELF_HOSTED = 'self-hosted';
-const UBUNTU_LATEST = 'ubuntu-latest';
+const UBUNTU_VERSION = 'ubuntu-20.04';
 
 (async () => {
   try {
-    const labels = github.context.payload.pull_request.labels || []
-    
-    if (labels.some(label => label.name === SELF_HOSTED)) {
-      core.setOutput('runner', SELF_HOSTED)
+    const labels = github.context.payload.pull_request.labels || [];
+
+    if (labels.some((label) => label.name === SELF_HOSTED)) {
+      core.setOutput('runner', SELF_HOSTED);
     } else {
-      core.setOutput('runner', UBUNTU_LATEST)
+      core.setOutput('runner', UBUNTU_VERSION);
     }
   } catch (error) {
-    core.setOutput('runner', UBUNTU_LATEST)
+    core.setOutput('runner', UBUNTU_VERSION);
   }
-})()
+})();
 
 })();
 
